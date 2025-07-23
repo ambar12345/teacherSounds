@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classroom Soundboard</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f0f8ff; }
+    .btn { margin: 10px; padding: 20px; font-size: 24px; cursor: pointer;
+           border: none; border-radius: 10px; box-shadow: 0 4px #999; }
+    .btn:active { box-shadow: 0 2px #666; transform: translateY(2px); }
+  </style>
+</head>
+<body>
+  <h1>🧑‍🏫 Classroom Soundboard</h1>
+
+  <button class="btn" onclick="play('transition')" title="Transition">
+    🎵 Transition
+  </button>
+
+  <button class="btn" onclick="play('tps')" title="Think‑Pair‑Share">
+    💬 TPS Music
+  </button>
+
+  <button class="btn" onclick="play('attention')" title="Attention">
+    🔔 Attention
+  </button>
+
+  <button class="btn" onclick="play('cleanup')" title="Clean‑up">
+    🧹 Clean‑Up
+  </button>
+
+  <button class="btn" onclick="play('tooloud')" title="Too Loud Alert">
+    📣 Too Loud!
+  </button>
+
+  <!-- Audio elements -->
+  <audio id="transition" src="transition.mp3"></audio>
+  <audio id="tps" src="tps.mp3"></audio>
+  <audio id="attention" src="attention.mp3"></audio>
+  <audio id="cleanup" src="cleanup.mp3"></audio>
+  <audio id="tooloud" src="tooloud.mp3"></audio>
+
+  <script>
+    function play(id) {
+      const audio = document.getElementById(id);
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
